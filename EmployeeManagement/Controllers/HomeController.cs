@@ -7,17 +7,13 @@ namespace EmployeeManagement.Controllers
     public class HomeController : Controller
     {
         private IEmployeeRepository _employeeRepository;
-        public HomeController(IEmployeeRepository employeeRepository)
+        private readonly ILogger<HomeController> _logger;
+        public HomeController(IEmployeeRepository employeeRepository, ILogger<HomeController> logger)
         {
             _employeeRepository = employeeRepository;
-        }
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
             _logger = logger;
         }
-
+ 
         public String Index()
         {
           return  _employeeRepository.GetEmployee(1).Name;
