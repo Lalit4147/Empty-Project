@@ -6,7 +6,7 @@ namespace EmployeeManagement.Controllers
 {
     public class HomeController : Controller
     {
-        private IEmployeeRepository _employeeRepository;
+        private  readonly IEmployeeRepository _employeeRepository;
         private readonly ILogger<HomeController> _logger;
         public HomeController(IEmployeeRepository employeeRepository, ILogger<HomeController> logger)
         {
@@ -16,8 +16,16 @@ namespace EmployeeManagement.Controllers
  
         public String Index()
         {
-          return  _employeeRepository.GetEmployee(1).Name;
+          return  _employeeRepository.GetEmployee(2).Name;
         }
+
+        public JsonResult Details()
+        {
+            Employee model = _employeeRepository.GetEmployee(2);
+            return Json(model);
+        }
+
+     
 
         public IActionResult Privacy()
         {
