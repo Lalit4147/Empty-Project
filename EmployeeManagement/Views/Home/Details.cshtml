@@ -3,8 +3,18 @@
         <title></title>
     </head>
     <body>
-        <h1>
-            Details.cshtml from Views/Home Folder
-        </h1>
+        <h3>
+            @ViewBag.PageTitle
+        </h3>
+   
+        <div>
+            Name: @Model.Name
+        </div>
+        <div>
+        Email: @Model.email
+        </div>
+        <div>
+        Department: @Model.Department
+        </div>
     </body>
     </html>

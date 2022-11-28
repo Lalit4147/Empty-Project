@@ -16,13 +16,14 @@ namespace EmployeeManagement.Controllers
  
         public String Index()
         {
-          return  _employeeRepository.GetEmployee(2).Name;
+          return  _employeeRepository.GetEmployee(1).Name;
         }
 
-        public JsonResult Details()
+        public ViewResult Details()
         {
-            Employee model = _employeeRepository.GetEmployee(2);
-            return Json(model);
+            Employee model = _employeeRepository.GetEmployee(1);
+            ViewBag.PageTitle = "Employee Details";
+            return View(model);
         }
 
      
