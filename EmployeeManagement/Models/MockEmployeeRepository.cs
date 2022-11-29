@@ -13,6 +13,12 @@
                 new Employee() { Id = 4, Name = "Mastan", Department = "IT", email = "Mas@techxotica.com" }
              };
         }
+
+        public IEnumerable<Employee> GetAllEmployees()
+        {
+            return _employeeList;
+        }
+
         public Employee GetEmployee(int Id)
         {
             return _employeeList.FirstOrDefault(e => e.Id == Id);
